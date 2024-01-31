@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="stylesheet" href="font/iconfont.css" />
+    <link rel="stylesheet" href="css/font_footer.css">
+    <script type="text/javascript" src="index.js"></script>
+
+    <style>
+        /* 轮播图 */
+        * {
+            box-sizing: border-box;
+        }
+
+        .slider {
+            margin-left: 600px;
+            width: 700px;
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .slider-wrapper {
+            width: 100%;
+            height: 320px;
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .slider-footer {
+            height: 80px;
+            background-color: rgb(100, 67, 68);
+            padding: 12px 12px 0 12px;
+            position: relative;
+        }
+
+        .slider-footer .toggle {
+            position: absolute;
+            right: 0;
+            top: 12px;
+            display: flex;
+        }
+
+        .slider-footer .toggle button {
+            margin-right: 12px;
+            width: 28px;
+            height: 28px;
+            appearance: none;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .slider-footer .toggle button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .slider-footer p {
+            margin: 0;
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .slider-indicator {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .slider-indicator li {
+            width: 8px;
+            height: 8px;
+            margin: 4px;
+            border-radius: 50%;
+            background: #fff;
+            opacity: 0.4;
+            cursor: pointer;
+        }
+
+        .slider-indicator li.active {
+            width: 12px;
+            height: 12px;
+            opacity: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    < class="container">
+        <div class="container-head">
+            <!-- 左侧导航栏 -->
+            <div class="main-left">
+                <div class="main-item">
+                    <ul>
+                        <li>
+                            <div class="music_title"><a href="./login.html">点击登录</a></div>
+                            <div class="music_title"><a href="./register.html">点击注册</a></div>
+                        </li>
+                        <li>
+                            <div class="music_title">在线音乐</div>
+                            <ul class="main_left_subnav">
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-icon-test"></i>
+                                        <span>音乐馆</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-shipin"></i>
+                                        <span>视频</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-diantai"></i>
+                                        <span>电台</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="music_title">我的音乐</div>
+                            <ul class="main_left_subnav">
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-icon-test"></i>
+                                        <span>音乐</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-shipin"></i>
+                                        <span>视频</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <i class="iconfont icon-shipin"></i>
+                                        <span><a href="./bfq.html">纯净音乐播放器（可以播放）</a></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 右侧展示部分 -->
+            <div class="main-right">
+                <div class="main-right-searh">
+                    <input type="text" placeholder="搜索">
+                    <i class="iconfont icon-sousuo"></i>
+                </div>
+                <div class="main-right-hd">
+                    <h2>音乐馆</h2>
+                </div>
+                <div class="main-right-tab">
+                    <a href="#">精选</a>
+                    <a href="#">有声电台</a>
+                    <a href="#">排行</a>
+                    <a href="#">歌手</a>
+                    <a href="#">分类歌单</a>
+                </div>
+                <!-- 轮播图   -->
+                <!-- 轮播图 -->
+                <div class="slider">
+                    <div class="slider-wrapper">
+                        <img src="./images/slider01.jpg" alt="" />
+                    </div>
+                    <div class="slider-footer">
+                        <p></p>
+                        <ul class="slider-indicator">
+                            <li class="active"></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class="toggle">
+                            <button class="prev">&lt;</button>
+                            <button class="next">&gt;</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="main-right-switch">
+                    <a href="#" class="selected"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                    <a href="#"></a>
+                </div>
+                <!-- 歌单推荐 -->
+                <div class="main-right-hot">
+                    <h4>歌单推荐（不能播放）</h4>
+                    <ul>
+                        <li>
+                            <img src="images/img-p1.webp.jpg" alt="低空飞行，首发单曲" />
+                            <p>伤恋DJ热情歌：入戏深的人最卑微</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/img-p2.webp.jpg" alt="" />
+                            <p>华语佳作200首↻让听歌成为享受</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/img-p3.webp.jpg" alt="" />
+                            <p>到此为止吧，你的世界我退出了</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/img-p4.webp.jpg" alt="" />
+                            <p>抖音热歌：全网循环超好听</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/img-p5.webp.jpg" alt="" />
+                            <p>压迫感升级！当Rap遇上Phonk</p>
+                            <span class="hot_play"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 新歌首发 -->
+                <div class="main-right-hot">
+                    <h4>新歌首发（不能播放）</h4>
+                    <ul>
+                        <li>
+                            <img src="images/浮光.webp.jpg" alt="" />
+                            <p>浮光<br>JANNIK</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/burn.webp.jpg" alt="" />
+                            <p>Burn It All Down<br>英雄联盟</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/paradise.webp.jpg" alt="" />
+                            <p>Paradise<br>Coldplay</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/someday.webp.jpg" alt="" />
+                            <p>Someday<br>OneRepublic</p>
+                            <span class="hot_play"></span>
+                        </li>
+                        <li>
+                            <img src="images/underdog.webp.jpg" alt="" />
+                            <p>Underdog<br>The Script</p>
+                            <span class="hot_play"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- 底部音乐栏 -->
+        <!-- 底部 -->
+        <div class="footer">
+            <div class="ft_left">
+                <img class="_img" src="./images/真玲.jpg" alt="">
+                <div class="songNameAndSinger">
+                    <span class="songName">春夏秋冬reprise（可以播放）<i class="iconfont icon-aixin"></i></span>
+                    <span class="singer">當山みれい</span>
+                </div>
+            </div>
+
+            <div class="ft_main">
+                <!-- 播放栏工具 -->
+                <ul class="tool_list">
+                    <li><i class="prev iconfont icon-lajitong"></i></li>
+                    <li><i class="iconfont icon-shangyishoushangyige"></i></li>
+                    <li onclick="bofang()"><i class="iconfont icon-bofang _audio"></i><audio id="ado"></audio></i></li>
+                    <li><i class="next iconfont icon-xiayigexiayishou"></i></li>
+                    <li><i class="iconfont icon-geciweidianji"></i></li>
+                </ul>
+                <!-- 进度条 -->
+                <div class="progress">
+                    <div class="slide"></div>
+                    <div class="fill"> </div>
+                    <!--歌曲当前时间与总时间  -->
+                    <span class="currentTime time">00:00</span>
+                    <span class="duraTime time">00:00</span>
+                </div>
+            </div>
+
+            <ul class="ft_right">
+                <li class="jigao">完美</li>
+                <li class="iconfont icon-yinxiao"></li>
+                <li class="iconfont icon-yinliangkai _voice"></li>
+                <li class="iconfont icon-yiqipindan"></li>
+                <li class="iconfont icon-24gl-playlistMusic"></li>
+            </ul>
+        </div>
+        </div>
+
+        <script src="./js/listen.js"></script>
+        <script>
+            //轮播图
+
+            const data = [
+                { url: './images/slider01.jpg', title: '低空飞行，首发单曲', color: 'rgb(100, 67, 68)' },
+                { url: './images/slider02.jpg', title: '出发寻找属于自己的正解', color: 'rgb(43, 35, 26)' },
+                { url: './images/slider03.jpg', title: '暗恋神作传达汹涌爱意', color: 'rgb(36, 31, 33)' },
+                { url: './images/slider04.jpg', title: '原神启动', color: 'rgb(139, 98, 66)' },
+                { url: './images/slider05.jpg', title: '新年上上签', color: 'rgb(67, 90, 92)' },
+                { url: './images/slider06.jpg', title: '全明星街球派对主题曲', color: 'rgb(166, 131, 143)' },
+                { url: './images/slider07.jpg', title: '海贼王25周年经典版', color: 'rgb(53, 29, 25)' },
+                { url: './images/slider08.jpg', title: '跟我做自己', color: 'rgb(53, 29, 25)' }
+            ]
+            // 获取元素
+            const img = document.querySelector('.slider-wrapper img')
+            const p = document.querySelector('.slider-footer p')
+            const footer = document.querySelector('.slider-footer')
+            // 1. 右按钮业务
+            // 1.1 获取右侧按钮 
+            const next = document.querySelector('.next')
+            let i = 0  // 信号量 控制播放图片张数
+            // 1.2 注册点击事件
+
+            next.addEventListener('click', function () {
+                // console.log(11)
+                i++
+                // 1.6判断条件  如果大于8 就复原为 0
+                // if (i >= 8) {
+                //   i = 0
+                // }
+                i = i >= data.length ? 0 : i
+                // 1.3 得到对应的对象
+                // console.log(data[i])
+                // 调用函数
+                toggle()
+            })
+
+            // 2. 左侧按钮业务
+            // 2.1 获取左侧按钮 
+            const prev = document.querySelector('.prev')
+            // 1.2 注册点击事件
+            prev.addEventListener('click', function () {
+                i--
+                // 判断条件  如果小于0  则爬到最后一张图片索引号是 7
+                // if (i < 0) {
+                //   i = 7
+                // }
+                i = i < 0 ? data.length - 1 : i
+                // 1.3 得到对应的对象
+                // console.log(data[i])
+                // 调用函数
+                toggle()
+            })
+
+            // 声明一个渲染的函数作为复用
+            function toggle() {
+                // 1.4 渲染对应的数据
+                img.src = data[i].url
+                p.innerHTML = data[i].title
+                footer.style.backgroundColor = data[i].color
+                // 1.5 更换小圆点    先移除原来的类名， 当前li再添加 这个 类名
+                document.querySelector('.slider-indicator .active').classList.remove('active')
+                document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.add('active')
+            }
+
+
+            // 1、 获取第一个小li
+            const li1 = document.querySelector('.xtx_navs li:first-child')
+            const li2 = li1.nextElementSibling
+            // 2. 最好做个渲染函数 因为退出登录需要重新渲染
+            function render() {
+                // 2.1 读取本地存储的用户名
+                const uname = localStorage.getItem('xtx-uname')
+                // console.log(uname)
+                if (uname) {
+                    li1.innerHTML = `<a href="javascript:;"><i class="iconfont icon-user">${uname
+                        }</i></a>
+        `
+                    li2.innerHTML = '<a href="javascript:;">退出登录</a>'
+                } else {
+                    li1.innerHTML = '<a href="./login.html">请先登录</a>'
+                    li2.innerHTML = '<a href="./register.html">免费注册</a>'
+                }
+            }
+            render()  // 调用函数
+
+            // 2. 点击退出登录模块
+            li2.addEventListener('click', function () {
+                // 删除本地存储的数据
+                localStorage.removeItem('xtx-uname')
+                // 重新渲染
+                render()
+            })
+        </script>
+</body>
+
+</html>
